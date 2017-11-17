@@ -1,0 +1,28 @@
+extends ../layouts/default
+
+block content
+	if Wall.length
+		each Product_Information in Wall
+			section.banner
+				img(src=Product_Information.image.one)
+			.section-center
+				h1.section-heading=Product_Information.title
+					hr.underline
+			section.container
+				div
+					ul.ul-dot
+						li.section-para1
+							span#tick.fa.fa-check.fa-spacing(aria-hidden='true')
+							=Product_Information.content.one
+						
+						li.section-para1
+							span#tick.fa.fa-check.fa-spacing(aria-hidden='true')
+							=Product_Information.content.two
+						
+						li.section-para1
+							span#tick.fa.fa-check.fa-spacing(aria-hidden='true')
+							=Product_Information.content.three
+						
+						li.section-para1
+							span#tick.fa.fa-check.fa-spacing(aria-hidden='true')
+							=Product_Information.content.four

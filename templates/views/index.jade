@@ -1,0 +1,92 @@
+extends ../layouts/default
+
+block content
+	#myCarousel.carousel.slide(data-ride="carousel")
+		//indicators
+		ol.carousel-indicators
+			li.active(data-target='#myCarousel', data-slide-to='0')
+			li(data-target='#myCarousel', data-slide-to='1')
+			li(data-target='#myCarousel', data-slide-to='2')
+			li(data-target='#myCarousel', data-slide-to='3')
+
+		//Wrapper for slides
+		.carousel-inner(role="listbox")
+			if Homes.length
+				each Home in Homes
+					.item.active
+						img(src=Home.image.one, alt="")
+						p.caption=Home.content.one
+					.item
+						img(src=Home.image.two, alt="")
+						p.caption=Home.content.two
+					.item
+						img(src=Home.image.three, alt="")
+						p.caption=Home.content.three
+					.item
+						img(src=Home.image.four alt="")
+						p.caption=Home.content.four
+		//Left and right controls
+		a.left.carousel-control(href="#myCarousel", role="button", data-slide="prev")
+			span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+			span.sr-only Previous
+		a.right.carousel-control(href="#myCarousel", role="button", data-slide="next")
+			span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+			span.sr-only Next
+
+	section
+		if Homes.length
+			each Home in Homes
+				.container
+					.row.row1-height
+						h1.home-heading=Home.title
+						p.home-para=Home.content.five
+
+				.row.row-color
+					.col-md-6.col-row-padd-marg
+						img(src=Home.image.five, width="100%")
+
+					.col-md-5.col-md-offset-1.col-row-padd-marg.row-bootstrap
+						.content
+							h1.about-heading=Home.heading.one
+							.about-para=Home.content.five
+							a.know-more-button(href="/aboutus/who-we-our") know more
+
+				.row.row-color.col-row-padd-marg
+					h3.home-heading.product=Home.heading.two
+					.col-md-4.col-row-padd-marg
+						a(href="https://www.youtube.com/watch?v=pNHDpXlKI4o", target="blank")
+							img.product-image(src=Home.image.six)
+					.col-md-4.col-row-padd-marg
+						a(href="https://www.youtube.com/watch?v=LAtwVs3wmZ4", target="blank")
+							img.product-image(src=Home.image.seven)
+					.col-md-4.col-row-padd-marg
+						a(href="https://www.youtube.com/watch?v=-TfqEIhI9sU", target="blank")
+							img.product-image(src=Home.image.eight)
+
+				.row.row-color.row-about.col-row-padd-marg
+					h3.home-heading.product=Home.heading.three
+					.brands
+					img(src=Home.image.nine, width="100%")
+				.row.row-color.row-about.col-row-padd-marg
+					h3.home-heading.product=Home.heading.four
+					.brands
+					img(src=Home.image.ten, width="100%")
+			
+				.row-coverings.wall-padding
+					div
+						h3.home-heading.product=Home.heading.five
+					.container
+						.row
+							div
+								.col-md-2.col-sm-5.col-xs-5.why-wall-pos-grid
+									img.wall-img(src=Home.image.eleven)
+								.col-md-2.col-sm-5.col-xs-5
+									img.wall-img(src=Home.image.twelve)
+								.col-md-2.col-sm-5.col-xs-5.why-wall-pos-grid
+									img.wall-img(src=Home.image.thirteen)
+								.col-md-2.col-sm-5.col-xs-5
+									img.wall-img(src=Home.image.fourteen)
+								.col-md-2.col-sm-5.col-xs-5.why-wall-pos-grid
+									img.wall-img(src=Home.image.fifteen)
+								.col-md-2.col-sm-5.col-xs-5
+									img.wall-img(src=Home.image.sixteen)

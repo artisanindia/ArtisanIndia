@@ -1,0 +1,22 @@
+extends ../layouts/default
+
+block content
+	if About.length
+		each About_Us in About
+			section.banner
+				img(src=About_Us.image.one)
+			.section-center
+				h1.section-heading=About_Us.title
+					hr.underline
+			section.container
+				div
+					.col-md-3.col-sm-3.col-xs-12.section-image
+						img(src=About_Us.image.two, width='100%')
+					
+					.col-md-9.col-sm-9
+						p.section-para1=About_Us.content.one
+						img.img-brand(src=About_Us.image.three, width='90%')
+						<br><br>
+						h4(style='padding-left: 20px')=About_Us.heading.one
+						p.section-para1=About_Us.content.two
+						img.img-brand(src=About_Us.image.four, width='90%')
